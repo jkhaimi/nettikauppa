@@ -1,19 +1,22 @@
 body {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color: aliceblue;
+    background-color: rgb(7, 7, 39);
+}
+
+h1 {
+    color: whitesmoke;
 }
 
 .product {
-    display: inline-block;
-    vertical-align: top;
+    display: inline-grid;
+    width: 15%;
+    height: 100%;
     margin: 10px;
     padding: 10px;
     margin-left: 5%;
+    margin-top: 3%;
     border: 1px solid #ccc;
-    border-radius: 10%;
-    width: 15%;
-    height: 100%;
-    font-size: small;
+    border-radius: 5%;
     background-color: whitesmoke; 
 }
 
@@ -24,38 +27,72 @@ body {
 }
 
 
-.previousButton {
-    width: 100px;
+.previousButton, .nextButton {
+    display: inline-block;
+    margin: 10px;
+    width: 100%;
     height: 50px;
     font-size: medium;
     font-weight: bold;
-    
-}
-
-.nextButton {
-    width: 100px;
-    height: 50px;
-    font-size: medium;
-    font-weight: bold;
-    margin-top: 5px;
+    color: blueviolet;
 }
 
 .pageButton {
+    width: 19%;
+    height: 50px;
     margin-left: 10px;
     margin-top: 5px;
-    width: 50px;
+    margin-bottom: 10px;
     font-weight: bold;
+    color: blueviolet;
+}
+
+.sortOption {
+    width: 69%;
+    height: 30px;
+    margin-bottom: 0px;
+    color: blueviolet;
+    
 }
 
 .product p {
-    font-size: 16px;
+    font-size: large;
     font-weight: bold;
 }
 
 .currentPage {
     font-size: xx-large;
     font-weight: bold;
+    color: whitesmoke;
 }
+
+@media (max-width: 1000px) {
+    .product {
+      width: 40%;
+      font-size: x-large;
+    }
+    .previousButton, .nextButton {
+        width: 100%;
+        height: 150px;
+        font-size: xx-large;
+    }
+
+    .pageButton {
+        width: 18%;
+        height: 100px;
+        font-size: xx-large;   
+    }
+
+    .sortOption {
+        width: 400px;
+        height: 100px;
+        font-size: xx-large;
+    }
+
+    .product p {
+        font-size: xx-large;
+    }
+  }
 
 
 

@@ -49,6 +49,7 @@ for (let i = 0; i < productsPerPage && i < products.length; i++) {
 
 //Tämä funktio päivittää sivun kun siirrytään aikaisemmalle tai seuraavalle sivulle.
 function updatePage() {
+
     container.innerHTML = '';
     for (let i = currentPage * productsPerPage; i < (currentPage + 1) * productsPerPage && i < products.length; i++) {
       const product = products[i];
@@ -69,6 +70,16 @@ function updatePage() {
           <p>Price: ${product.variants[0].price} &euro; </p>
         `;
       }
+
+      let sortOption = document.getElementById("sort").value;
+      if (sortOption === "ascending") {
+        products.sort((a, b) => a.variants[0].price - b.variants[0].price);
+      } else if (sortOption === "descending") {
+        products.sort((a, b) => b.variants[0].price - a.variants[0].price);
+      } else if (sortOption === "null") {
+        //Korjaa
+      }
+
 
       container.appendChild(productDiv);
       container.appendChild(previousButton);
@@ -102,6 +113,7 @@ function updatePage() {
       updatePage();
     }
   });
+  container.appendChild(previousButton);
   
   //Luodaan nappi joka vie seuraavalle sivulle
   let nextButton = document.createElement('button');
@@ -113,6 +125,7 @@ function updatePage() {
       updatePage();
     }
   });
+  container.appendChild(nextButton);
 
 //Luodaan rivi nappeja joista voi valita sivun
 for (let i = 0; i < urls.length; i++) {
@@ -125,12 +138,14 @@ for (let i = 0; i < urls.length; i++) {
   });
   document.getElementById('pageButtons').appendChild(pageButton);
 }
+    
+//Luodaan if lause joka piilottaa previous napin kun sivu avataan aluksi
+if (currentPage === 0) {
+  previousButton.style.display = 'none';
+} else {
+  previousButton.style.display = 'block';
+}
 
-  container.appendChild(previousButton);
-  container.appendChild(nextButton);
-  document.getElementById('currentPage').textContent = `Page ${currentPage + 1}`;
-
-
+document.getElementById('currentPage').textContent = `Page ${currentPage + 1}`;
   })
   .catch(error => console.error(error));
-  

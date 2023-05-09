@@ -6,17 +6,20 @@
 	<title>Shopify Products</title>
 </head>
 <body>
-<h1>Woolman Shopify products:</h1>
-<p>This page is a preliminary task for Woolman's front end Developer trainee position. It took about 8-10 hours to make the page. 
-    As requested in the assignment, the page has 5 different pages, each with 50 different products. 
-    The name, price and image of the products are visible in the products. 
-    There are things on the page that have room for improvement, but I wanted to respect the given timeframe.
-    Thank you for looking at my assignment and I hope I get the opportunity to tell you more about my skills and knowledge in an interview.
-</p>
+<h1>Shopify products:</h1>
+
 
 <div id="currentPage" class="currentPage"></div>
 <div id="products"></div>
 <div id="pageButtons"></div>
 
+<div id="dropdown" class="sortOption">
+    <label for="sort">Sort by:</label>
+    <select id="sort" class="sortOption">
+      <option value="null"></option>  
+      <option value="ascending"><strong>Price (low to high)</strong></option>
+      <option value="descending"><strong>Price (high to low)</strong></option>
+    </select>
+  </div>
 
 </html>
