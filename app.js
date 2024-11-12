@@ -4,11 +4,11 @@ let currentPage = 0;
 
 //Tässä on valitun yritysten products.json linkit, joista sivun tuotteet otetaan.
 const urls = [
-    'https://www.jungalow.com/products.json',
-    'https://www.jungalow.com/products.json?limit=50&page=2',
-    'https://www.jungalow.com/products.json?limit=50&page=3',
-    'https://www.jungalow.com/products.json?limit=50&page=4',
-    'https://www.jungalow.com/products.json?limit=50&page=5'
+    'https://www.poketo.com/products.json',
+    'https://www.poketo.com/products.json?limit=50&page=2',
+    'https://www.poketo.com/products.json?limit=50&page=3',
+    'https://www.poketo.com/products.json?limit=50&page=4',
+    'https://www.poketo.com/products.json?limit=50&page=5',
   ];
   
   //Tämä osa koodia ottaa vastaan yllä olevan listan linkeistä ja laittaa ne näkyville sivulle. 
